@@ -8,10 +8,70 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.min.js"></script>
     <title>Index</title>
 </head>
 <body>
-    <h2>Welcome to the bookstore application!</h2>
-    <p>This is first page of the view.</p>
+    <h2 class="text-danger">Welcome to the bookstore application!</h2>
+    @*<p>This is first page of the view.</p>
+        <p>@DateTime.Now.ToString("dd-m-yy")</p>
+        <h1>Sum is @(5+3)</h1>
+        <h1>Multiline</h1>
+        @{
+            int a = 10;
+            int b = 20;
+            int c = a + b;
+        }
+        <h2>Sum is @c</h2>
+        <h2>My email is kanikajindal@gmail.com</h2>
+        <h2>My other email is @@kanikaJindal</h2>*@
+    @* @{
+            int a = 3;
+        }
+        @if(a<5){
+            <h1>Hello from if block</h1>
+            a++; //Here @ is not needed as we are already in the c sharp code
+            <h2>@a</h2> //if we want to write a c sharp variable value inside a html code then only we write @
+        }
+        else
+        {
+            <h1>Hello from else block</h1>
+        }
+        @{
+            int z = 5;
+        }
+
+        @switch (z)
+        {
+            case 1:
+                <h1>I am 1</h1>
+                break;
+            case 2:
+                <h2>I am 2</h2>
+                break;
+            case 5:
+                <h2>I am 5</h2>
+                break;
+            default:
+                break;
+
+        }*@
+
+    @{
+        var list = new List<int>() { 1, 2, 3, 4, 5 };
+    }
+
+    @foreach (var item in list)
+    {
+        <h3>@item</h3>
+    }
+    <img src="~/images/logo.png" class="logo" />
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        alert("Page Loaded");
+    });
+</script>

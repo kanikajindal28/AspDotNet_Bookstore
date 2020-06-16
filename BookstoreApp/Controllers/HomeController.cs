@@ -10,6 +10,15 @@ namespace BookstoreApp.Controllers
     {
         public ViewResult Index()
         {
+            /*var obj = new{ id= 1 ,name ="Kanika"};
+            return View("AboutUs",obj);*/
+            /* return View("TempView/Index2.cshtml");*/
+            /* return View("../../TempView/Index2"); //relative Path*/
+            return View();
+        }
+
+        public ViewResult AboutUs()
+        {
             return View();
         }
     }

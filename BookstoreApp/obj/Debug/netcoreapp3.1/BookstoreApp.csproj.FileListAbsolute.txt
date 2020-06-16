@@ -102,3 +102,7 @@ D:\AspNet\BookstoreApp\BookstoreApp\obj\Debug\netcoreapp3.1\BookstoreApp.RazorCo
 D:\AspNet\BookstoreApp\BookstoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\AspNet\BookstoreApp\BookstoreApp\obj\Debug\netcoreapp3.1\BookstoreApp.RazorTargetAssemblyInfo.cs
 D:\AspNet\BookstoreApp\BookstoreApp\obj\Debug\netcoreapp3.1\BookstoreApp.Views.pdb
+D:\AspNet\BookstoreApp\BookstoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\AboutUs.cshtml.g.cs
+D:\AspNet\BookstoreApp\BookstoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Book\getAllBooks.cshtml.g.cs
+D:\AspNet\BookstoreApp\BookstoreApp\obj\Debug\netcoreapp3.1\Razor\TempView\Index2.cshtml.g.cs
+D:\AspNet\BookstoreApp\BookstoreApp\bin\Debug\netcoreapp3.1\libman.json
