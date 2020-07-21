@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using BookstoreApp.Data;
+using BookstoreApp.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
@@ -18,10 +21,13 @@ namespace BookstoreApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<BookStoreContext>(options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BookstoreApp;Trusted_Connection = True;MultipleActiveResultSets=true"));
             services.AddControllersWithViews();
             // same as above   services.AddMvc();
 #if DEBUG
             services.AddRazorPages().AddRazorRuntimeCompilation();
+
+            services.AddScoped<BookRepository, BookRepository>();
 #endif
         }
 

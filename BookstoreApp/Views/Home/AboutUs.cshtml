@@ -1,7 +1,9 @@
-﻿
-@{
-    Layout = "_Layout";
+﻿@{ 
+     ViewData["Title"] = "About Us";
+    dynamic book = ViewData["book"] as BookModel;   @*in case of ViewData we need to cast the datAa*@
 }
 
     <h2>This is About Us page.</h2>
-
+    <h3>@ViewData["Property1"]</h3>
+    <p>@book.Id</p>
+    <p>@book.Author</p>

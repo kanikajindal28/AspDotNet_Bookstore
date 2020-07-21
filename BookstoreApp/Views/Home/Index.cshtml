@@ -1,54 +1,137 @@
 ﻿
 @{
-    Layout = "_Layout";
+    dynamic data = ViewBag.Data;
 }
+<section class="jumbotron text-center">
+    <div class="container">
+        <environment names="Development">
+            <h3>Development</h3>
+        </environment>
+        <environment names="Production,Staging"> @*we can either use names or include*@
+            <h3>Production</h3>
+        </environment>
+        <h1>Welcome to the bookstore application! @ViewBag.Title</h1>
+        <p class="lead text-muted">
+            @data.Id @data.Name
+            <br />
+            ID = @ViewBag.Type.Id  Author = @ViewBag.Type.Author
+            <br />
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including
+            versions of Lorem Ipsum.
+        </p>
+        <p><a href="#" class="btn btn-primary my-2">Search books</a></p>
+    </div>
+</section>
 
-    <h2 class="text-danger">Welcome to the bookstore application!</h2>
-    @*<p>This is first page of the view.</p>
-        <p>@DateTime.Now.ToString("dd-m-yy")</p>
-        <h1>Sum is @(5+3)</h1>
-        <h1>Multiline</h1>
-        @{
-            int a = 10;
-            int b = 20;
-            int c = a + b;
-        }
-        <h2>Sum is @c</h2>
-        <h2>My email is kanikajindal@gmail.com</h2>
-        <h2>My other email is @@kanikaJindal</h2>*@
-    @* @{
-            int a = 3;
-        }
-        @if(a<5){
-            <h1>Hello from if block</h1>
-            a++; //Here @ is not needed as we are already in the c sharp code
-            <h2>@a</h2> //if we want to write a c sharp variable value inside a html code then only we write @
-        }
-        else
-        {
-            <h1>Hello from else block</h1>
-        }
-        @{
-            int z = 5;
-        }
+<div class="py-5 bg-light">
+    <div class="container">
+        <h3 class="my-3">Top Books</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000">
+                        <div class="card-body">
+                            <p class="card-text">This section will ne used to display the short description of the book.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="bth-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                </div>
+                                <small class="text-muted">Author Name</small>
+                            </div>
+                        </div>
+                    </svg>
+                </div>
+            </div>
 
-        @switch (z)
-        {
-            case 1:
-                <h1>I am 1</h1>
-                break;
-            case 2:
-                <h2>I am 2</h2>
-                break;
-            case 5:
-                <h2>I am 5</h2>
-                break;
-            default:
-                break;
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000">
+                        <div class="card-body">
+                            <p class="card-text">This section will ne used to display the short description of the book.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="bth-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                </div>
+                                <small class="text-muted">Author Name</small>
+                            </div>
+                        </div>
+                    </svg>
+                </div>
+            </div>
 
-        }*@
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000">
+                        <div class="card-body">
+                            <p class="card-text">This section will ne used to display the short description of the book.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="bth-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                </div>
+                                <small class="text-muted">Author Name</small>
+                            </div>
+                        </div>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+
+
+
+@*<p>This is first page of the view.</p>
+    <p>@DateTime.Now.ToString("dd-m-yy")</p>
+    <h1>Sum is @(5+3)</h1>
+    <h1>Multiline</h1>
     @{
+        int a = 10;
+        int b = 20;
+        int c = a + b;
+    }
+    <h2>Sum is @c</h2>
+    <h2>My email is kanikajindal@gmail.com</h2>
+    <h2>My other email is @@kanikaJindal</h2>*@
+@* @{
+        int a = 3;
+    }
+    @if(a<5){
+        <h1>Hello from if block</h1>
+        a++; //Here @ is not needed as we are already in the c sharp code
+        <h2>@a</h2> //if we want to write a c sharp variable value inside a html code then only we write @
+    }
+    else
+    {
+        <h1>Hello from else block</h1>
+    }
+    @{
+        int z = 5;
+    }
+
+    @switch (z)
+    {
+        case 1:
+            <h1>I am 1</h1>
+            break;
+        case 2:
+            <h2>I am 2</h2>
+            break;
+        case 5:
+            <h2>I am 5</h2>
+            break;
+        default:
+            break;
+
+    }*@
+
+<!--@{
         var list = new List<int>() { 1, 2, 3, 4, 5,6 };
     }
 
@@ -60,7 +143,14 @@
     <img src="~/images/logo.png" class="logo" />
 
 <script>
-    $(document).ready(function () {
-        @*alert("Page Loaded");*@
-    });
-</script>
+    $(document).ready(function () {-->
+@*alert("Page Loaded");*@
+<!--});
+</script>-->
+@*@section scripts{
+    <script>
+        $(document).ready(function () {
+            alert("Hey");
+        });
+    </script>
+}*@

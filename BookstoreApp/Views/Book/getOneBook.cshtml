@@ -1,0 +1,105 @@
+﻿@*@using BookstoreApp.Models;*@
+@model BookModel; 
+ @*if we remove this line then also the view works fine and the data is received. it becomes a dyanamic view*@
+
+@{
+    ViewData["Title"] = "Book Detail: " + Model.Title;
+}
+
+<div class="container">
+    <h3 class="display-4">Book Details</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img height="300px" width="300px" src="~/images/book/book1.jpg" alt="image1">
+                    </div>
+                    <div class="carousel-item">
+                        <img height="300px" width="300px" src="~/images/book/book2.jpg" />
+                    </div>
+                    <div class="carousel-item">
+                        <img height="300px" width="300px" src="~/images/book/book3.jpg" />
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@Model.Title</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-primary">
+                    <span class="col-form-label label-primary">By:- </span>
+                    <span class="text-monospace">@Model.Author</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <p class="description">@Model.Description</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 ">
+                    <button class="btn btn-outline-primary">Read Now!</button>
+                </div>
+            </div>
+
+            <hr />
+
+            <ul class="list-group">
+                <li class="list-group-item"><span class="font-weight-bold">Category - </span>@Model.Category</li>
+                <li class="list-group-item"><span class="font-weight-bold">Total Pages - </span>@Model.TotalPages</li>
+                <li class="list-group-item"><span class="font-weight-bold">Language - </span>@Model.Language </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <hr />
+    <div class="py-5 bg-light" id="similarbooks">
+        <h3 class="h3">Similar Books</h3>
+        <div class="row">
+            @for (int i = 0; i < 5; i++)
+            {
+                <div class="col-md-4">
+                    <div class="card-mb-4 shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg">
+                            <div class="card-body">
+                                <h3 class="card-title">@Model.Title</h3>
+                                <p class="card-text">@Model.Description.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="bth-group">
+                                        <a href="/book/getonebook/@Model.Id" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                    </div>
+                                    <small class="text-muted">@Model.Author</small>
+                                </div>
+                            </div>
+                        </svg>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
